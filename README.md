@@ -1,2 +1,2 @@
 # bulletjournal
-bullet journal template generator made in js html and css3
+Bullet journal template generator made in js html and css3
