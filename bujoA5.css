@@ -4,6 +4,7 @@ body {
   background: rgb(204, 204, 204);
   font-family: "Indie Flower", cursive;
 }
+
 page {
   background: white;
   display: block;
@@ -11,25 +12,15 @@ page {
   margin-bottom: 0.5cm;
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
 }
-page[size="A4"] {
-  width: 21cm;
-  height: 29.7cm;
-}
-page[size="A4"][layout="landscape"] {
-  width: 29.7cm;
-  height: 21cm;
-}
-page[size="A3"] {
-  width: 29.7cm;
-  height: 42cm;
-}
-page[size="A3"][layout="landscape"] {
-  width: 42cm;
-  height: 29.7cm;
-}
+
 page[size="A5"] {
   width: 14.8cm;
   height: 21cm;
+}
+
+page[size="A5"][layout="landscape"] {
+  width: 21cm;
+  height: 14.8cm;
 }
 
 .sheet {
@@ -39,21 +30,44 @@ page[size="A5"] {
   padding: 0.7cm 1cm 0.7cm 1.2cm;
 }
 
-.sheetA4H {
-  width: 12.6cm;
-  height: 19cm;
-  display: block;
-  padding: 1cm 1cm 1cm 1.2cm;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.titlePage {
+  height: 0.5cm;
+  margin: 0 auto 0.2cm auto;
+  text-align: right;
+  text-decoration: underline;
+}
+
+.titleMonth {
+  height: 0.5cm;
+  margin: 0 auto 0.5cm auto;
+  text-decoration: underline black 2px;
+  width: 100%;
 }
 
 .verticalMes {
   height: 100%;
-  width: 25%;
+  width: 32%;
+  float: left;
+  display: block;
+  border-left: 1px solid black;
+}
 
-  
+.horizontalMes {
+  width: 100%;
+  height: 33%;
+  padding: 0;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
 }
 
 .diasMes {
@@ -61,7 +75,7 @@ page[size="A5"] {
   width: 100%;
 }
 
-.dia{
+.dia {
   border-radius: 25%;
   margin: 3px;
   text-align: center;
@@ -69,10 +83,9 @@ page[size="A5"] {
   line-height: 100%;
   padding: 6px;
   height: 16px;
-  
 }
 
-.dia *{
+.dia * {
   padding: 0 auto 0 auto;
 }
 
@@ -90,11 +103,11 @@ page[size="A5"] {
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-  ". . . . . . ."
-  ". . . . . . ."
-  ". . . . . . ."
-  ". . . . . . ."
-  ". . . . . . ."; 
+    ". . . . . . ."
+    ". . . . . . ."
+    ". . . . . . ."
+    ". . . . . . ."
+    ". . . . . . .";
   text-align: center;
   vertical-align: middle;
   padding: 0 auto 0 auto;
@@ -116,13 +129,7 @@ page[size="A5"] {
 
 .title {
   height: 18cm;
-}
-
-h1 {
-  height: 0.5cm;
-  margin: 0 auto 0.5cm auto;
-  text-align: right;
-  text-decoration: underline;
+  margin-top: 1cm;
 }
 
 .container {
@@ -140,9 +147,9 @@ h1 {
   margin: 0 1px 1px 0;
   flex: auto;
   text-align: left;
-  height: 1.13cm;
-  min-height: 1.13cm;
-  max-height: 1.13cm;
+  height: 1.1cm;
+  min-height: 1.1cm;
+  max-height: 1.1cm;
   border-bottom: 1px dotted lightgray;
 }
 
@@ -150,15 +157,22 @@ h1 {
   padding: 5px 5px;
 }
 
-
 .weekend {
   background-color: lightgray;
   border-radius: 10px;
 }
 
-page[size="A5"][layout="landscape"] {
-  width: 21cm;
-  height: 14.8cm;
+.bujo {
+  font-size: 0.6cm;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 1cm;
+  font-weight: bold;
+  display: block;
+}
+
+.bujo li {
+  margin-bottom: 0.3cm;
 }
 
 @media print {

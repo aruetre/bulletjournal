@@ -64,7 +64,8 @@ var ano = new Date().getFullYear();
 for (let mes = 1; mes <= 12; mes++) {
   pages += '<page size="A5">';
   pages += '<div class="sheet">';
-  pages += "<h1>" + obtenerNombreMes(mes) + " > " + ano + "</h1>";
+  pages +=
+    '<h1 class="titlePage">' + obtenerNombreMes(mes) + " > " + ano + "</h1>";
   pages += '<div class="polcadot title">';
   pages += '<div class="verticalMesA5">';
   pages += '<div class="diasMesA5">';
@@ -97,7 +98,7 @@ for (let mes = 1; mes <= 12; mes++) {
       classW = "weekend";
     }
 
-    days += '<div class="' + classW + '">' + dia + "</div>";
+    days += '<div class="dia ' + classW + '">' + dia + "</div>";
   }
 
   pages += days;
@@ -126,12 +127,13 @@ pages = "";
 days = "";
 
 for (let mes = 1; mes <= 12; mes++) {
-  pages +=
-    '<page size="A5"><div class="sheet"><h1>' +
-    obtenerNombreMes(mes) +
-    " > " +
+  pages += '<page size="A5">';
+  pages += '<div class="sheet">';
+  pages +='<h1 class="titlePage">' +obtenerNombreMes(mes) +" > " +
     ano +
-    '</h1><div class=" title">';
+    '</h1>';
+    pages +=
+    '<div class=" title">';
 
   days += '<div class="container">';
   for (let dia = 1; dia <= diasDelMesYAnoActual(mes); dia++) {
@@ -142,7 +144,13 @@ for (let mes = 1; mes <= 12; mes++) {
     }
 
     days +=
-      '<div class="item ' + classW + '">' + dia + " > " + nombreDia + "</div>";
+      '<div class="item ' +
+      classW +
+      '"><span>' +
+      dia +
+      " > " +
+      nombreDia +
+      "</span></div>";
   }
 
   days += "</div>";
