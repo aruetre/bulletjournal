@@ -10,7 +10,7 @@ page {
   display: block;
   margin: 0 auto;
   margin-bottom: 0.5cm;
-  box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+  /*box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);*/
 }
 
 page[size="A5"] {
@@ -31,17 +31,19 @@ page[size="A5"][layout="landscape"] {
 }
 
 .titlePage {
-  height: 0.5cm;
+  height: 0.6cm;
   margin: 0 auto 0.2cm auto;
   text-align: right;
   text-decoration: underline;
+  font-size: 0.6cm;
 }
 
 .titleMonth {
-  height: 0.5cm;
+  height: 0.6cm;
   margin: 0 auto 0.5cm auto;
   text-decoration: underline black 2px;
   width: 100%;
+  font-size: 0.6cm;
 }
 
 .verticalMes {
@@ -125,20 +127,22 @@ page[size="A5"][layout="landscape"] {
   width: 12.6cm;
   height: 19cm;
   display: block;
+  outline: 1px solid red;
 }
 
 .title {
-  height: 18cm;
-  margin-top: 1cm;
+  height: 18.5cm;
+  margin-top: 0.5cm;
 }
 
 .container {
   width: 12.6cm;
-  height: 19cm;
+  height: 18.5cm;
   background-color: transparent;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  outline: 1px solid green;
 }
 
 .item {
@@ -147,7 +151,7 @@ page[size="A5"][layout="landscape"] {
   margin: 0 1px 1px 0;
   flex: auto;
   text-align: left;
-  height: 1.1cm;
+  height: 1cm;
   min-height: 1.1cm;
   max-height: 1.1cm;
   border-bottom: 1px dotted lightgray;
