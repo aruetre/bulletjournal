@@ -48,11 +48,12 @@ page[size="A5"][layout="landscape"] {
 
 .verticalMes {
   height: 100%;
-  width: 32.75%;
+  width: 32.4%;
   float: left;
   display: block;
   border: 1px dashed rgb(54, 51, 51);
   border-radius: 15px;
+  margin: 1px;
 }
 
 .horizontalMes {

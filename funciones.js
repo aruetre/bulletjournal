@@ -59,8 +59,8 @@ function obtenerNombreDia(ano, mes, dia, longitud) {
 let pages = "";
 let days = "";
 
-var ano = new Date().getFullYear();
-
+//var ano = new Date().getFullYear();
+var ano=2023;
 for (let mes = 1; mes <= 12; mes++) {
   pages += '<page size="A5">';
   pages += '<div class="sheet">';
@@ -129,11 +129,9 @@ days = "";
 for (let mes = 1; mes <= 12; mes++) {
   pages += '<page size="A5">';
   pages += '<div class="sheet">';
-  pages +='<h1 class="titlePage">' +obtenerNombreMes(mes) +" > " +
-    ano +
-    '</h1>';
-    pages +=
-    '<div class=" title">';
+  pages +=
+    '<h1 class="titlePage">' + obtenerNombreMes(mes) + " > " + ano + "</h1>";
+  pages += '<div class=" title">';
 
   days += '<div class="container">';
   for (let dia = 1; dia <= diasDelMesYAnoActual(mes); dia++) {

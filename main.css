@@ -1,0 +1,21 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+#setup {
+    display: block;       /* iframes are inline by default */
+    background: #000;
+    border: none;         /* Reset default border */
+    height: 25vh;        /* Viewport-relative units */
+    width: 100vw;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.733));
+}
+
+#printer {
+    display: block;       /* iframes are inline by default */
+    border: none;         /* Reset default border */
+    height: 75vh;        /* Viewport-relative units */
+    width: 100vw;
+}
