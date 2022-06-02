@@ -48,10 +48,11 @@ page[size="A5"][layout="landscape"] {
 
 .verticalMes {
   height: 100%;
-  width: 32%;
+  width: 32.75%;
   float: left;
   display: block;
-  border-left: 1px solid black;
+  border: 1px dashed rgb(54, 51, 51);
+  border-radius: 15px;
 }
 
 .horizontalMes {
@@ -127,7 +128,7 @@ page[size="A5"][layout="landscape"] {
   width: 12.6cm;
   height: 19cm;
   display: block;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 
 .title {
@@ -142,7 +143,7 @@ page[size="A5"][layout="landscape"] {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  outline: 1px solid green;
+  /* outline: 1px solid green; */
 }
 
 .item {
