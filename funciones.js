@@ -56,11 +56,21 @@ function obtenerNombreDia(ano, mes, dia, longitud) {
   return event.toLocaleDateString("es-ES", optionsShort);
 }
 
+var ano = new Date().getFullYear();
+document.getElementById("year").value=ano;
+
+
+
+function setYear(id){
+  document.getElementById("pages").innerHTML = "";
+   ano = document.getElementById(id).value;
+   alert(ano);
+
 let pages = "";
 let days = "";
 
-//var ano = new Date().getFullYear();
-var ano=2023;
+
+
 for (let mes = 1; mes <= 12; mes++) {
   pages += '<page size="A5">';
   pages += '<div class="sheet">';
@@ -161,3 +171,5 @@ for (let mes = 1; mes <= 12; mes++) {
 }
 
 document.getElementById("pages").innerHTML = pages;
+
+}

@@ -187,4 +187,8 @@ page[size="A5"][layout="landscape"] {
     margin: 0;
     box-shadow: 0;
   }
+  .no-print, .no-print *
+    {
+        display: none !important;
+    }
 }

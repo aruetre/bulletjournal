@@ -19,6 +19,18 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
+    <div class="no-print">
+      <input
+        type="number"
+        min="1900"
+        max="2099"
+        step="1"
+        value=""
+        id="year"
+        onchange="setYear('year')"
+      />
+      <button onclick="window.print();return false;">Imprimir</button>
+    </div>
 
     <page size="A5">
       <div class="sheet">
@@ -44,8 +56,6 @@
             <li class="donwload"><span>⬇ Descarga</span></li>
             <li class="note"><span>➖ Nota</span></li>
             <li class="ideas"><span>⚠ Ideas</span></li>
-            
-
           </ul>
         </div>
       </div>
@@ -87,7 +97,7 @@
         <h1 class="titlePage">Registro futuro</h1>
         <div class="polcadot title">
           <div class="horizontalMes right">
-            <h1 class="titleMonth ">Abril</h1>
+            <h1 class="titleMonth">Abril</h1>
           </div>
           <div class="horizontalMes right">
             <h1 class="titleMonth">Mayo</h1>
@@ -116,7 +126,6 @@
       </div>
     </page>
 
-
     <page size="A5">
       <div class="sheet">
         <h1 class="titlePage">Registro futuro</h1>
@@ -133,7 +142,6 @@
         </div>
       </div>
     </page>
-
 
     <page size="A5">
       <div class="sheet">
@@ -186,7 +194,6 @@
       </div>
     </page>
 
-
     <page size="A5">
       <div class="sheet">
         <h1 class="titlePage">Registro futuro</h1>
@@ -194,10 +201,10 @@
           <div class="verticalMes center">
             <h1 class="titleMonth">Octubre</h1>
           </div>
-          <div class="verticalMes  center">
+          <div class="verticalMes center">
             <h1 class="titleMonth">Noviembre</h1>
           </div>
-          <div class="verticalMes  center">
+          <div class="verticalMes center">
             <h1 class="titleMonth">Diciembre</h1>
           </div>
         </div>

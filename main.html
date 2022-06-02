@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="main.css" />
       </head>
   <body>
-    <iframe id="setup" src="setup.html"  width="100%" height="300"></iframe>
-    <iframe id="printer" src="bujoA5.html" width="100%" height="100%" style="border: none;"></iframe>
+    <div id="setup" width="100%" height="300">  <button onclick="document.getElementById('printer').contentWindow.print()">go</button></div>
+    <iframe id="printer" name="printerName" src="bujoA5.html" width="100%" height="100%" style="border: none;"></iframe>
   </body>
 </html>
