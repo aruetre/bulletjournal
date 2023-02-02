@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="bujoA5.css" />
   </head>
-  <body>
+  <body onload="setYear('year')">
     <!--[if lt IE 7]>
       <p class="browsehappy">
         You are using an <strong>outdated</strong> browser. Please
@@ -20,17 +20,12 @@
       </p>
     <![endif]-->
     <div class="no-print">
-      <input
-        type="number"
-        min="1900"
-        max="2099"
-        step="1"
-        value=""
-        id="year"
-      
-      />
+      <fieldset>
+        <legend>Opciones:</legend>
+      <input type="number" min="1900" max="2099" step="1" value="" id="year"/>
       <button onclick="setYear('year')">Generar</button>
       <button onclick="window.print();return false;">Imprimir</button>
+      </fieldset>
     </div>
 
     <page size="A5">

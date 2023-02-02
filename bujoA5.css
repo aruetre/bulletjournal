@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
+
+
+
 body {
-  background: rgb(204, 204, 204);
+  background:  #EBECF0;
   font-family: "Indie Flower", cursive;
 }
 
@@ -16,11 +19,13 @@ page {
 page[size="A5"] {
   width: 14.8cm;
   height: 21cm;
+  border-radius: 8px;
 }
 
 page[size="A5"][layout="landscape"] {
   width: 21cm;
   height: 14.8cm;
+  
 }
 
 .sheet {
@@ -28,6 +33,7 @@ page[size="A5"][layout="landscape"] {
   height: 19cm;
   display: block;
   padding: 0.7cm 1cm 0.7cm 1.2cm;
+ 
 }
 
 .titlePage {
@@ -181,11 +187,25 @@ page[size="A5"][layout="landscape"] {
   margin-bottom: 0.3cm;
 }
 
+.no-print{
+  margin: 25px;
+  
+}
+
+.no-print fieldset{
+  border-radius: 10px;
+background: #e0e0e0;
+box-shadow:  20px 20px 60px #BABECC,
+             -20px -20px 60px #ffffff;
+             border: transparent;
+}
+
 @media print {
   body,
   page {
     margin: 0;
     box-shadow: 0;
+   
   }
   .no-print, .no-print *
     {

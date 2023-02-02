@@ -57,68 +57,63 @@ function obtenerNombreDia(ano, mes, dia, longitud) {
 }
 
 var ano = new Date().getFullYear();
-document.getElementById("year").value=ano;
+document.getElementById("year").value = ano;
 
-
-
-function setYear(id){
+function setYear(id) {
   document.getElementById("pages").innerHTML = "";
-   ano = document.getElementById(id).value;
-   alert(ano);
+  ano = document.getElementById(id).value;
 
-let pages = "";
-let days = "";
+  let pages = "";
+  let days = "";
 
+  for (let mes = 1; mes <= 12; mes++) {
+    pages += '<page size="A5">';
+    pages += '<div class="sheet">';
+    pages +=
+      '<h1 class="titlePage">' + obtenerNombreMes(mes) + " > " + ano + "</h1>";
+    pages += '<div class="polcadot title">';
+    pages += '<div class="verticalMesA5">';
+    pages += '<div class="diasMesA5">';
+    pages +=
+      "<div>L</div><div>M</div><div>M</div><div>J</div><div>V</div><div>S</div><div>D</div>";
 
+    let posicionDia = 0;
 
-for (let mes = 1; mes <= 12; mes++) {
-  pages += '<page size="A5">';
-  pages += '<div class="sheet">';
-  pages +=
-    '<h1 class="titlePage">' + obtenerNombreMes(mes) + " > " + ano + "</h1>";
-  pages += '<div class="polcadot title">';
-  pages += '<div class="verticalMesA5">';
-  pages += '<div class="diasMesA5">';
-  pages +=
-    "<div>L</div><div>M</div><div>M</div><div>J</div><div>V</div><div>S</div><div>D</div>";
+    var arr = new Map([
+      ["lun", "0"],
+      ["mar", "1"],
+      ["mié", "2"],
+      ["jue", "3"],
+      ["vie", "4"],
+      ["sáb", "5"],
+      ["dom", "6"],
+    ]);
 
-  let posicionDia = 0;
-
-  var arr = new Map([
-    ["lun", "0"],
-    ["mar", "1"],
-    ["mié", "2"],
-    ["jue", "3"],
-    ["vie", "4"],
-    ["sáb", "5"],
-    ["dom", "6"],
-  ]);
-
-  var res = arr.get(obtenerNombreDia(ano, mes, 1, 0));
-  if (res > 0) {
-    for (var esp = 0; esp < res; esp++) {
-      days += "<div></div>";
-    }
-  }
-
-  for (let dia = 1; dia <= diasDelMesYAnoActual(mes); dia++) {
-    var nombreDia = obtenerNombreDia(ano, mes, dia, 0);
-    var classW = "";
-    if ((nombreDia === "sáb") | (nombreDia === "dom")) {
-      classW = "weekend";
+    var res = arr.get(obtenerNombreDia(ano, mes, 1, 0));
+    if (res > 0) {
+      for (var esp = 0; esp < res; esp++) {
+        days += "<div></div>";
+      }
     }
 
-    days += '<div class="dia ' + classW + '">' + dia + "</div>";
+    for (let dia = 1; dia <= diasDelMesYAnoActual(mes); dia++) {
+      var nombreDia = obtenerNombreDia(ano, mes, dia, 0);
+      var classW = "";
+      if ((nombreDia === "sáb") | (nombreDia === "dom")) {
+        classW = "weekend";
+      }
+
+      days += '<div class="dia ' + classW + '">' + dia + "</div>";
+    }
+
+    pages += days;
+
+    pages += "</div></div></div></div></page>";
+
+    days = "";
   }
 
-  pages += days;
-
-  pages += "</div></div></div></div></page>";
-
-  days = "";
-}
-
-/* <page size="A5">
+  /* <page size="A5">
   <div class="sheet">
     <h1>Enero</h1>
     <div class="polcadot title">
@@ -131,45 +126,44 @@ for (let mes = 1; mes <= 12; mes++) {
   </div>
 </page>; */
 
-document.getElementById("pagesMes").innerHTML = pages;
+  document.getElementById("pagesMes").innerHTML = pages;
 
-pages = "";
-days = "";
+  pages = "";
+  days = "";
 
-for (let mes = 1; mes <= 12; mes++) {
-  pages += '<page size="A5">';
-  pages += '<div class="sheet">';
-  pages +=
-    '<h1 class="titlePage">' + obtenerNombreMes(mes) + " > " + ano + "</h1>";
-  pages += '<div class=" title">';
+  for (let mes = 1; mes <= 12; mes++) {
+    pages += '<page size="A5">';
+    pages += '<div class="sheet">';
+    pages +=
+      '<h1 class="titlePage">' + obtenerNombreMes(mes) + " > " + ano + "</h1>";
+    pages += '<div class=" title">';
 
-  days += '<div class="container">';
-  for (let dia = 1; dia <= diasDelMesYAnoActual(mes); dia++) {
-    var nombreDia = obtenerNombreDia(ano, mes, dia, 0);
-    var classW = "";
-    if ((nombreDia === "sáb") | (nombreDia === "dom")) {
-      classW = "weekend";
+    days += '<div class="container">';
+    for (let dia = 1; dia <= diasDelMesYAnoActual(mes); dia++) {
+      var nombreDia = obtenerNombreDia(ano, mes, dia, 0);
+      var classW = "";
+      if ((nombreDia === "sáb") | (nombreDia === "dom")) {
+        classW = "weekend";
+      }
+
+      days +=
+        '<div class="item ' +
+        classW +
+        '"><span>' +
+        dia +
+        " > " +
+        nombreDia +
+        "</span></div>";
     }
 
-    days +=
-      '<div class="item ' +
-      classW +
-      '"><span>' +
-      dia +
-      " > " +
-      nombreDia +
-      "</span></div>";
+    days += "</div>";
+
+    pages += days;
+
+    pages += "</div></div></page>";
+
+    days = "";
   }
 
-  days += "</div>";
-
-  pages += days;
-
-  pages += "</div></div></page>";
-
-  days = "";
-}
-
-document.getElementById("pages").innerHTML = pages;
-
+  document.getElementById("pages").innerHTML = pages;
 }
